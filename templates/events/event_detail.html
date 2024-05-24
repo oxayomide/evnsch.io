@@ -1,0 +1,12 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}{{ event.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ event.title }}</h1>
+<p>{{ event.description }}</p>
+<p><strong>Starts:</strong> {{ event.start_time }}</p>
+<p><strong>Ends:</strong> {{ event.end_time }}</p>
+<p><a href="{% url 'event_edit' event.pk %}">Edit</a> | <a href="{% url 'event_delete' event.pk %}">Delete</a></p>
+<p><a href="{% url 'event_list' %}">Back to Event List</a></p>
+{% endblock %}
